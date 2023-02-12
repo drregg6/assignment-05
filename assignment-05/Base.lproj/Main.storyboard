@@ -38,6 +38,9 @@
                                                 <rect key="frame" x="158.66666666666666" y="0.0" width="114.33333333333334" height="34"/>
                                                 <nil key="textColor"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Dpv-9f-J19"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -52,6 +55,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLi-ti-dvV">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="eurSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="3FB-pH-Cgd"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -66,6 +72,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TEG-HQ-Bed">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="gbpSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ykc-Lf-AXa"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -80,6 +89,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3BP-3D-egI">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="jpySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="r38-sG-CH5"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -94,6 +106,9 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-Yk-g8R">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="inrSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="QY0-TC-8h4"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -103,6 +118,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Convert">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="convertButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aMT-Zd-IaG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -142,8 +160,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDl-Zi-exW" userLabel="amountLabel">
-                                <rect key="frame" x="191.33333333333334" y="381.33333333333331" width="10.333333333333343" height="20.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vDl-Zi-exW" userLabel="amountLabel">
+                                <rect key="frame" x="176" y="381.33333333333331" width="41" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,7 +169,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="51o-cP-0XU">
                                 <rect key="frame" x="90" y="479.66666666666669" width="213" height="183.33333333333331"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yfm-XL-Rx1">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Yfm-XL-Rx1" userLabel="EurStack">
                                         <rect key="frame" x="0.0" y="0.0" width="213" height="20.333333333333332"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Euro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLG-WD-7uw" userLabel="EUR">
@@ -168,7 +186,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-E6-tma">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-E6-tma" userLabel="GbpStack">
                                         <rect key="frame" x="0.0" y="54.333333333333321" width="213" height="20.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-Il-9te">
@@ -185,7 +203,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rYI-eI-VvW">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rYI-eI-VvW" userLabel="JpyStack">
                                         <rect key="frame" x="0.0" y="108.66666666666669" width="213" height="20.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JPY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39C-95-BCD">
@@ -202,7 +220,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="GdR-hK-Oew">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="GdR-hK-Oew" userLabel="InrStack">
                                         <rect key="frame" x="0.0" y="162.99999999999994" width="213" height="20.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TwL-qa-aU4">
@@ -232,6 +250,13 @@
                             <constraint firstItem="NvM-33-Yta" firstAttribute="trailing" secondItem="51o-cP-0XU" secondAttribute="trailing" constant="90" id="xmu-O2-K9L"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="vDl-Zi-exW" id="0BQ-0T-koC"/>
+                        <outlet property="eurLabel" destination="5oH-xy-b4M" id="jdn-pb-NhG"/>
+                        <outlet property="gbpLabel" destination="Arf-se-eXd" id="JSH-jE-Ms0"/>
+                        <outlet property="inrLabel" destination="tBN-0n-SvI" id="k5y-9K-2LL"/>
+                        <outlet property="jpyLabel" destination="ude-si-W1u" id="Ctd-Nd-Wg9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8W-8y-DxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
