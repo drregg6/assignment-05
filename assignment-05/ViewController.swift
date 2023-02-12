@@ -4,6 +4,8 @@
 //
 //  Created by Dave Regg on 2/12/23.
 //
+//  To force int vals
+//  https://stackoverflow.com/questions/26919854/how-can-i-declare-that-a-text-field-can-only-contain-an-integer
 
 import UIKit
 
