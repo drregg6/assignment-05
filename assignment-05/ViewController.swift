@@ -9,24 +9,25 @@ import UIKit
 class ViewController: UIViewController {
     
     var amount: Int?
-    var eurSwitch = true
-    var gbpSwitch = true
-    var jpySwitch = true
-    var inrSwitch = true
     @IBOutlet weak var userInput: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var convertButton: UIButton!
+    
+    var convertLogic = ConvertLogic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         errorLabel.isHidden = true
     }
 
     @IBAction func changedInput(_ sender: UITextField) {
         errorLabel.isHidden = true
+        convertButton.isUserInteractionEnabled = true
         do {
-            try printInput(sender.text!)
+            var test = try isInt(sender.text!)
+            print(test)
         } catch InputError.InvalidValue(let reason) {
+            convertButton.isUserInteractionEnabled = false
             errorLabel.isHidden = false
             errorLabel.text = reason
         } catch {
@@ -35,60 +36,41 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func eurSlider(_ sender: UISwitch) {
-        print("switched")
-        if sender.isOn {
-            eurSwitch = true
-        } else {
-            eurSwitch = false
-        }
+    @IBAction func setEuroSlider(_ sender: UISwitch) {
+        convertLogic.setEurSwitch(sender.isOn)
+    }
+    @IBAction func setGbpSlider(_ sender: UISwitch) {
+        convertLogic.setGbpSwitch(sender.isOn)
+    }
+    @IBAction func setJpySlider(_ sender: UISwitch) {
+        convertLogic.setJpySwitch(sender.isOn)
+    }
+    @IBAction func setInrSlider(_ sender: UISwitch) {
+        convertLogic.setInrSwitch(sender.isOn)
     }
     
     
-    @IBAction func gbpSlider(_ sender: UISwitch) {
-        if sender.isOn {
-            gbpSwitch = true
-        } else {
-            gbpSwitch = false
-        }
-    }
-    
-    
-    @IBAction func jpySlider(_ sender: UISwitch) {
-        if sender.isOn {
-            jpySwitch = true
-        } else {
-            jpySwitch = false
-        }
-    }
-    
-    
-    @IBAction func inrSlider(_ sender: UISwitch) {
-        if sender.isOn {
-            inrSwitch = true
-        } else {
-            inrSwitch = false
-        }
-    }
-    
+    // Segue
     @IBAction func convertButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toAmountView", sender: self)
         amount = Int(userInput.text!)
+        convertLogic.setAmount(amount!)
         
-        if (eurSwitch) {
-            print("convert eur")
+        if (convertLogic.getEurSwitch()) {
+            print(convertLogic.convertUsd(type: "eur"))
         }
-        if (gbpSwitch) {
-            print("convert gbp")
+        if (convertLogic.getGbpSwitch()) {
+            print(convertLogic.convertUsd(type: "gbp"))
         }
-        if (jpySwitch) {
-            print("convert jpy")
+        if (convertLogic.getJpySwitch()) {
+            print(convertLogic.convertUsd(type: "jpy"))
         }
-        if (inrSwitch) {
-            print("convert inr")
+        if (convertLogic.getInrSwitch()) {
+            print(convertLogic.convertUsd(type: "inr"))
         }
     }
     
+    // Override segue var
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAmountView" {
             let destination = segue.destination as! AmountView
@@ -96,12 +78,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func printInput(_ str: String) throws {
+    
+    // Error handling
+    func isInt(_ str: String) throws -> Bool {
         guard Int(str) != nil else {
             throw InputError.InvalidValue(reason: "Input must be an Integer")
         }
         
-        print(str)
+        return Int(str) != nil
     }
     
     enum InputError: Error {

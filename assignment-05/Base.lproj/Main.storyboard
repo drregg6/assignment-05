@@ -62,7 +62,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLi-ti-dvV">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="eurSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="3FB-pH-Cgd"/>
+                                                    <action selector="setEuroSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="3FB-pH-Cgd"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -79,7 +79,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TEG-HQ-Bed">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="gbpSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ykc-Lf-AXa"/>
+                                                    <action selector="setGbpSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ykc-Lf-AXa"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -96,7 +96,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3BP-3D-egI">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="jpySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="r38-sG-CH5"/>
+                                                    <action selector="setJpySlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="r38-sG-CH5"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -113,7 +113,7 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8s7-Yk-g8R">
                                                 <rect key="frame" x="224" y="0.0" width="51" height="31"/>
                                                 <connections>
-                                                    <action selector="inrSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="QY0-TC-8h4"/>
+                                                    <action selector="setInrSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="QY0-TC-8h4"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
@@ -153,6 +153,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="convertButton" destination="9Gx-G3-bKU" id="C9n-zy-8w7"/>
                         <outlet property="errorLabel" destination="FeT-Xw-azr" id="sTq-dS-ibJ"/>
                         <outlet property="userInput" destination="sS4-Pd-Z1i" id="zcY-JH-hD4"/>
                         <segue destination="XzZ-mg-RGp" kind="presentation" identifier="toAmountView" id="8YY-24-m0g"/>
