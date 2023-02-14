@@ -264,9 +264,13 @@
                     <connections>
                         <outlet property="amountLabel" destination="vDl-Zi-exW" id="0BQ-0T-koC"/>
                         <outlet property="eurLabel" destination="5oH-xy-b4M" id="jdn-pb-NhG"/>
+                        <outlet property="euroStack" destination="Yfm-XL-Rx1" id="0do-H5-FAW"/>
                         <outlet property="gbpLabel" destination="Arf-se-eXd" id="JSH-jE-Ms0"/>
+                        <outlet property="gbpStack" destination="Osf-E6-tma" id="pbo-Kb-YVB"/>
                         <outlet property="inrLabel" destination="tBN-0n-SvI" id="k5y-9K-2LL"/>
+                        <outlet property="inrStack" destination="GdR-hK-Oew" id="l9z-Eb-1dK"/>
                         <outlet property="jpyLabel" destination="ude-si-W1u" id="Ctd-Nd-Wg9"/>
+                        <outlet property="jpyStack" destination="rYI-eI-VvW" id="934-A9-9cK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W8W-8y-DxK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
