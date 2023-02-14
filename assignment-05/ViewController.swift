@@ -3,30 +3,40 @@
 //  assignment-05
 //
 //  Created by Dave Regg on 2/12/23.
-//
-//  To force int vals
-//  https://stackoverflow.com/questions/26919854/how-can-i-declare-that-a-text-field-can-only-contain-an-integer
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    var amount = 0
+    var amount: Int?
     var eurSwitch = true
     var gbpSwitch = true
     var jpySwitch = true
-    var intSwitch = true
-
+    var inrSwitch = true
+    @IBOutlet weak var userInput: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        errorLabel.isHidden = true
     }
 
-    @IBAction func userInput(_ sender: UITextField) {
+    @IBAction func changedInput(_ sender: UITextField) {
+        errorLabel.isHidden = true
+        do {
+            try printInput(sender.text!)
+        } catch InputError.InvalidValue(let reason) {
+            errorLabel.isHidden = false
+            errorLabel.text = reason
+        } catch {
+            
+        }
     }
     
     
     @IBAction func eurSlider(_ sender: UISwitch) {
+        print("switched")
         if sender.isOn {
             eurSwitch = true
         } else {
@@ -55,14 +65,28 @@ class ViewController: UIViewController {
     
     @IBAction func inrSlider(_ sender: UISwitch) {
         if sender.isOn {
-            intSwitch = true
+            inrSwitch = true
         } else {
-            intSwitch = false
+            inrSwitch = false
         }
     }
     
     @IBAction func convertButton(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toAmountView", sender: self)
+        amount = Int(userInput.text!)
+        
+        if (eurSwitch) {
+            print("convert eur")
+        }
+        if (gbpSwitch) {
+            print("convert gbp")
+        }
+        if (jpySwitch) {
+            print("convert jpy")
+        }
+        if (inrSwitch) {
+            print("convert inr")
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -70,5 +94,17 @@ class ViewController: UIViewController {
             let destination = segue.destination as! AmountView
             destination.amount = amount
         }
+    }
+    
+    func printInput(_ str: String) throws {
+        guard Int(str) != nil else {
+            throw InputError.InvalidValue(reason: "Input must be an Integer")
+        }
+        
+        print(str)
+    }
+    
+    enum InputError: Error {
+        case InvalidValue(reason: String)
     }
 }

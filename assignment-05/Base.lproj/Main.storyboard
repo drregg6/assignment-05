@@ -23,10 +23,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7BJ-nZ-sf0" userLabel="BottomView">
-                                <rect key="frame" x="60" y="521.66666666666663" width="273" height="266.33333333333337"/>
+                                <rect key="frame" x="60" y="486.33333333333326" width="273" height="301.66666666666674"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-Xw-azr" userLabel="errorLabel">
+                                        <rect key="frame" x="0.0" y="0.0" width="273" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-x3-bHj" userLabel="InputView">
-                                        <rect key="frame" x="0.0" y="0.0" width="273" height="34"/>
+                                        <rect key="frame" x="0.0" y="35.333333333333314" width="273" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter USD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhV-OS-39s">
                                                 <rect key="frame" x="0.0" y="6.9999999999999982" width="114.66666666666667" height="20.333333333333329"/>
@@ -36,16 +42,16 @@
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sS4-Pd-Z1i">
                                                 <rect key="frame" x="158.66666666666666" y="0.0" width="114.33333333333334" height="34"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
-                                                    <action selector="userInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Dpv-9f-J19"/>
+                                                    <action selector="changedInput:" destination="BYZ-38-t0r" eventType="editingChanged" id="84X-4c-vom"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="K6P-RX-iZd" userLabel="EurView">
-                                        <rect key="frame" x="0.0" y="49" width="273" height="31"/>
+                                        <rect key="frame" x="0.0" y="84.333333333333314" width="273" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-zK-wMR">
                                                 <rect key="frame" x="0.0" y="5.3333333333333712" width="155" height="20.333333333333332"/>
@@ -62,7 +68,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-Mo-Zwc" userLabel="GbpView">
-                                        <rect key="frame" x="0.0" y="95" width="273" height="31"/>
+                                        <rect key="frame" x="0.0" y="130.33333333333331" width="273" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQJ-ZR-idX">
                                                 <rect key="frame" x="0.0" y="5.3333333333333712" width="155" height="20.333333333333332"/>
@@ -79,7 +85,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="Hdl-lf-qNl" userLabel="JpyView">
-                                        <rect key="frame" x="0.0" y="141" width="273" height="31"/>
+                                        <rect key="frame" x="0.0" y="176.33333333333331" width="273" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JPY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxg-1n-R4c">
                                                 <rect key="frame" x="0.0" y="5.3333333333333712" width="155" height="20.333333333333332"/>
@@ -96,7 +102,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="69" translatesAutoresizingMaskIntoConstraints="NO" id="tni-eS-kOE" userLabel="InrView">
-                                        <rect key="frame" x="0.0" y="187" width="273" height="31"/>
+                                        <rect key="frame" x="0.0" y="222.33333333333331" width="273" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrR-Nz-ALS">
                                                 <rect key="frame" x="0.0" y="5.3333333333333712" width="155" height="20.333333333333332"/>
@@ -113,7 +119,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gx-G3-bKU">
-                                        <rect key="frame" x="0.0" y="233" width="273" height="33.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="268.33333333333331" width="273" height="33.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Convert">
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
@@ -128,6 +134,8 @@
                                     <constraint firstItem="9Gx-G3-bKU" firstAttribute="centerX" secondItem="7BJ-nZ-sf0" secondAttribute="centerX" id="Csk-F7-pBT"/>
                                     <constraint firstAttribute="trailing" secondItem="qNI-Mo-Zwc" secondAttribute="trailing" id="NLW-Oo-Nas"/>
                                     <constraint firstAttribute="trailing" secondItem="Hdl-lf-qNl" secondAttribute="trailing" id="RCs-nA-Nkh"/>
+                                    <constraint firstAttribute="trailing" secondItem="FeT-Xw-azr" secondAttribute="trailing" id="WYI-N4-C2j"/>
+                                    <constraint firstItem="FeT-Xw-azr" firstAttribute="leading" secondItem="7BJ-nZ-sf0" secondAttribute="leading" id="nGi-Fi-p8g"/>
                                     <constraint firstAttribute="trailing" secondItem="K6P-RX-iZd" secondAttribute="trailing" id="xH3-IB-yHb"/>
                                     <constraint firstAttribute="trailing" secondItem="VDC-x3-bHj" secondAttribute="trailing" id="xJi-Vo-Qmz"/>
                                 </constraints>
@@ -145,6 +153,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="errorLabel" destination="FeT-Xw-azr" id="sTq-dS-ibJ"/>
+                        <outlet property="userInput" destination="sS4-Pd-Z1i" id="zcY-JH-hD4"/>
                         <segue destination="XzZ-mg-RGp" kind="presentation" identifier="toAmountView" id="8YY-24-m0g"/>
                     </connections>
                 </viewController>

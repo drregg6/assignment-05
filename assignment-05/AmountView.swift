@@ -14,7 +14,7 @@ class AmountView: UIViewController {
     @IBOutlet weak var gbpLabel: UILabel!
     @IBOutlet weak var jpyLabel: UILabel!
     @IBOutlet weak var inrLabel: UILabel!
-    var amount = 0
+    var amount: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
