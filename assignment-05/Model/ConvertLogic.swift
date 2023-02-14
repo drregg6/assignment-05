@@ -8,11 +8,11 @@
 import Foundation
 
 struct ConvertLogic {
-    var eurSwitch = true
-    var gbpSwitch = true
-    var jpySwitch = true
-    var inrSwitch = true
-    var amount = 0
+    var eurSwitch: Bool = true
+    var gbpSwitch: Bool = true
+    var jpySwitch: Bool = true
+    var inrSwitch: Bool = true
+    var amount: Int = 0
     var eurAmount: Float = 0.00
     var gbpAmount: Float = 0.00
     var jpyAmount: Float = 0.00

@@ -41,10 +41,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FDD11F2E29999F2900FEF109 = {
+		FD50DC1A299C3FFA0001F8ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDD11F4E2999A35D00FEF109 /* AmountView.swift */,
+				FDD11F3E29999F2A00FEF109 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FD50DC1B299C402F0001F8ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FD50DC18299C25250001F8ED /* ConvertLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDD11F2E29999F2900FEF109 = {
+			isa = PBXGroup;
+			children = (
 				FDD11F3929999F2A00FEF109 /* assignment-05 */,
 				FDD11F3829999F2A00FEF109 /* Products */,
 			);
@@ -63,11 +79,11 @@
 			children = (
 				FDD11F3A29999F2A00FEF109 /* AppDelegate.swift */,
 				FDD11F3C29999F2A00FEF109 /* SceneDelegate.swift */,
-				FDD11F3E29999F2A00FEF109 /* ViewController.swift */,
+				FD50DC1A299C3FFA0001F8ED /* View */,
+				FD50DC1B299C402F0001F8ED /* Model */,
 				FDD11F4029999F2A00FEF109 /* Main.storyboard */,
 				FDD11F4329999F2B00FEF109 /* Assets.xcassets */,
 				FDD11F4529999F2B00FEF109 /* LaunchScreen.storyboard */,
-				FDD11F4E2999A35D00FEF109 /* AmountView.swift */,
 				FDD11F4829999F2B00FEF109 /* Info.plist */,
 			);
 			path = "assignment-05";
