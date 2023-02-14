@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        convertButton.isUserInteractionEnabled = false
     }
 
     @IBAction func changedInput(_ sender: UITextField) {
@@ -52,34 +53,23 @@ class ViewController: UIViewController {
     
     // Segue
     @IBAction func convertButton(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "toAmountView", sender: self)
         amount = Int(userInput.text!)
         convertLogic.setAmount(amount!)
         
-        if (convertLogic.getEurSwitch()) {
-            print(convertLogic.convertUsd(type: "eur"))
-        }
-        if (convertLogic.getGbpSwitch()) {
-            print(convertLogic.convertUsd(type: "gbp"))
-        }
-        if (convertLogic.getJpySwitch()) {
-            print(convertLogic.convertUsd(type: "jpy"))
-        }
-        if (convertLogic.getInrSwitch()) {
-            print(convertLogic.convertUsd(type: "inr"))
-        }
+        // THEN send it to the next screen
+        self.performSegue(withIdentifier: "toAmountView", sender: self)
     }
     
     // Override segue var
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toAmountView" {
             let destination = segue.destination as! AmountView
-            destination.amount = amount
+            destination.convertLogic = convertLogic // Let's send the entire stinkin' convertLogic obj
         }
     }
     
     
-    // Error handling
+    // Error handling - I think that this should be done elsewhere
     func isInt(_ str: String) throws -> Bool {
         guard Int(str) != nil else {
             throw InputError.InvalidValue(reason: "Input must be an Integer")

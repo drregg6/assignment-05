@@ -13,6 +13,10 @@ struct ConvertLogic {
     var jpySwitch = true
     var inrSwitch = true
     var amount = 0
+    var eurAmount: Float = 0.00
+    var gbpAmount: Float = 0.00
+    var jpyAmount: Float = 0.00
+    var inrAmount: Float = 0.00
     
     func getEurSwitch() -> Bool {
         return eurSwitch
@@ -25,6 +29,9 @@ struct ConvertLogic {
     }
     func getInrSwitch() -> Bool {
         return inrSwitch
+    }
+    func getAmount() -> Int {
+        return amount
     }
     
     mutating func setEurSwitch(_ isOn: Bool) {
@@ -63,28 +70,6 @@ struct ConvertLogic {
         amount = int
     }
     
-    // Float(String(format: "%.1f", interest))!
-//    func convertUsdToEur() -> Float {
-//        let converted = Float(amount) * 1.07377
-//        return Float(String(format: "%.1f", converted))!
-//    }
-//
-//    func convertUsdToGbp() -> Float {
-//        let converted = Float(amount) * 1.21737
-//        return Float(String(format: "%.1f", converted))!
-//    }
-//
-//    func convertUsdToJpy() -> Float {
-//        let converted = Float(amount) * 0.00751556
-//        return Float(String(format: "%.1f", converted))!
-//    }
-//
-//    func convertUsdToInr() -> Float {
-//        let converted = Float(amount) * 0.0120643
-//        return Float(String(format: "%.1f", converted))!
-//    }
-    
-    // Better code
     func convertUsd(type: String = "eur") -> Float {
         var constant: Float = 0.0
         switch type.lowercased() {
